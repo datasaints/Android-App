@@ -157,5 +157,10 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+
+        public void onBackPressed() {
+            // Simply Do noting!
+            System.out.println("TESTING ONBACKPRESSED");
+        }
     }
 }
