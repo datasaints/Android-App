@@ -1,5 +1,6 @@
 package org.stjude.www.dsassetmanagement;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -158,9 +159,10 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-        public void onBackPressed() {
-            // Simply Do noting!
-            System.out.println("TESTING ONBACKPRESSED");
-        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }
