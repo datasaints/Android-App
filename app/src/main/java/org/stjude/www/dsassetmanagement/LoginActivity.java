@@ -88,7 +88,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 //TODO: fix log in logic once authentication system is received.
-                //attemptLogin();
+                //attemptLogin(); -> attempt to login
+                //if successful
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 i.putExtra("email", mEmailView.getText().toString());
                 startActivity(i);
