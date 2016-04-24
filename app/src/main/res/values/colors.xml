@@ -2,5 +2,14 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FF4081</color>    
+    <color name="actionbar_separator">#FFFFFF</color>
+    <color name="actionbar_title">#FFFFFF</color>
+    <color name="actionbar_background_start">#F5F5F5</color>
+    <color name="actionbar_background_end">#708090</color>
+    <color name="actionbar_background_item_pressed_start">#FFFFFF</color>
+    <color name="actionbar_background_item_pressed_end">#D3D3D3</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>

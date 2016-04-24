@@ -29,8 +29,6 @@ public class ScanFragment extends Fragment implements iRcpEvent {
 
     //do Arete Pop stuff here
 
-    //remove all AretePop APIs to test for fragments
-    Intent intent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +41,10 @@ public class ScanFragment extends Fragment implements iRcpEvent {
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent newAct = new Intent(getActivity().getApplicationContext(), MainActivity2.class);
+                newAct.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(newAct);
+
                 //Start new intent here
 
 //                if(!RcpApi.isOpen) { //check if reader is open
