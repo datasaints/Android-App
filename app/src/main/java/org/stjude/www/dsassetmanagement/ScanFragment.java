@@ -27,9 +27,6 @@ import com.phychips.rcp.*;
  */
 public class ScanFragment extends Fragment implements iRcpEvent {
 
-    //do Arete Pop stuff here
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_scan, container, false);

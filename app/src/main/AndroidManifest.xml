@@ -2,10 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.stjude.www.dsassetmanagement">
 
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
 
     <application
         android:allowBackup="true"
@@ -30,6 +42,84 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="arete.MainActivity2"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="arete.AppSettingActivity"
+            android:label="@string/title_activity_setting"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.SplashActivity"
+            android:label="@string/title_activity_splash"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.TagAccessActivity"
+            android:label="@string/title_activity_tag_memory"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.OptionActivity"
+            android:label="@string/title_activity_option"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.PopSettingActivity"
+            android:label="@string/title_activity_pop_settingctivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.PopInformationActivity"
+            android:label="@string/title_activity_pop_information"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.ReadWriteActivity"
+            android:label="@string/title_activity_read"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.OnOffTimeActivity"
+            android:label="@string/title_activity_on_off_time"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.OutPutPowerActivity"
+            android:label="@string/title_activity_out_put_power"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.StopCondisionsActivity"
+            android:label="@string/title_activity_stop_condisions"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.LockActivity"
+            android:label="@string/title_activity_lock"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="arete.KillActivity"
+            android:label="@string/title_activity_kill"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
         </activity>
     </application>
 

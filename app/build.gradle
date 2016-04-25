@@ -28,4 +28,5 @@ dependencies {
     compile 'com.android.support:support-v4:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile files('libs/A100_AL1001-20_AndroidLibrary.jar')
+    compile files('libs/acra-4.5.0.jar')
 }
