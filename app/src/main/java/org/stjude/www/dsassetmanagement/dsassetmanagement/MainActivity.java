@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
     }
 
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+        //need to do some stuff for WebView fragment here
+    }
+
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.

@@ -103,7 +103,7 @@ public class ScanFragment extends Fragment implements iRcpEvent {
                         try
                         {
                             RcpApi.close();
-                            open.setChecked(false);
+                            //open.setChecked(false);
                             System.out.println("calling stop............");
                         }
                         catch (Exception e)
@@ -137,43 +137,56 @@ public class ScanFragment extends Fragment implements iRcpEvent {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!RcpApi.isOpen) { //check if reader is open
-                    try {
-                        RcpApi.open();
-                        setVolumeMax();
-                        button.setText("Stop Reading");
 
-                    }
-                    catch(Exception e) {
-                        getActivity().runOnUiThread(new Runnable()
-                        {
-                            public void run()
+                if(headsetConnected == true) {
+                    if(!RcpApi.isOpen) { //check if reader is open
+                        try {
+                            RcpApi.open();
+                            setVolumeMax();
+                            button.setText("Stop Reading");
+
+                        }
+                        catch(Exception e) {
+                            getActivity().runOnUiThread(new Runnable()
                             {
-                                Toast.makeText(getActivity(), "Reader Cannot be Opened.",
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
+                                public void run()
+                                {
+                                    Toast.makeText(getActivity(), "Reader Cannot be Opened.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
 
-                    //start reading tags
-                    try {
-                        RcpApi.startReadTagsWithRssi(max_tag, max_time, repeat_cycle);
-                    }
-                    catch (Exception e) {
-                        System.out.println("Reading failed");
-                    }
+                        //start reading tags
+                        try {
+                            RcpApi.startReadTagsWithRssi(max_tag, max_time, repeat_cycle);
+                        }
+                        catch (Exception e) {
+                            System.out.println("Reading failed");
+                        }
 
 
+                    }
+                    else {
+                        try {
+                            RcpApi.stopReadTags();
+                            RcpApi.close();
+                            button.setText("Start Reading");
+                        }
+                        catch(Exception e) {
+                            System.out.println("Reader cannot be closed");
+                        }
+                    }
                 }
                 else {
-                    try {
-                        RcpApi.stopReadTags();
-//                        RcpApi.close();
-                        button.setText("Start Reading");
-                    }
-                    catch(Exception e) {
-                        System.out.println("Reader cannot be closed");
-                    }
+                    getActivity().runOnUiThread(new Runnable()
+                    {
+                        public void run()
+                        {
+                            Toast.makeText(getActivity(), "Connect AretePop First!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             }
         });
@@ -192,6 +205,7 @@ public class ScanFragment extends Fragment implements iRcpEvent {
 
         return v;
     }
+
 
     /**
      * This interface must be implemented by activities that contain this

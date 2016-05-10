@@ -3,6 +3,7 @@ package org.stjude.www.dsassetmanagement.dsassetmanagement;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,18 @@ public class WebFragment extends Fragment {
         dbPage.setWebViewClient(new WebViewClient());
 
         dbPage.loadUrl("https://www.google.com");
+
+        dbPage.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((keyCode == KeyEvent.KEYCODE_BACK) && dbPage.canGoBack()) {
+                    dbPage.goBack();
+                    return true;
+                }
+                return false;
+            }
+        });
+
         return rootView;
     }
 
