@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -74,10 +75,14 @@ public class WebFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_web, container, false);
         dbPage = (WebView) rootView.findViewById(R.id.webView);
-        dbPage.getSettings().setJavaScriptEnabled(true);
+        dbPage.setWebChromeClient(new WebChromeClient());
         dbPage.setWebViewClient(new WebViewClient());
+        dbPage.clearCache(true);
+        dbPage.clearHistory();
+        dbPage.getSettings().setJavaScriptEnabled(true);
+        dbPage.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        dbPage.loadUrl("http://datasaints-env.us-west-1.elasticbeanstalk.com/");
 
-        dbPage.loadUrl("https://www.google.com");
 
         dbPage.setOnKeyListener(new View.OnKeyListener() {
             @Override

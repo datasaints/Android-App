@@ -65,10 +65,8 @@ public class MainActivity extends AppCompatActivity {
                     return WebFragment.newInstance("Web Fragment");
                 case 1:
                     return ProfileFragment.newInstance("Profile Fragment");
-                case 2:
-                    return ScanFragment.newInstance("Scan Fragment");
                 default:
-                    return ScanFragment.newInstance("Scan Fragment");
+                    return ProfileFragment.newInstance("Scan Fragment");
             }
 
             //return PlaceholderFragment.newInstance(position + 1);
@@ -76,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2;
         }
 
         @Override
@@ -87,8 +85,6 @@ public class MainActivity extends AppCompatActivity {
                     return "SECTION 1";
                 case 1:
                     return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
             }
             return null;
         }

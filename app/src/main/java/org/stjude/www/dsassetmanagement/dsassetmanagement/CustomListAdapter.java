@@ -1,3 +1,8 @@
+/*
+* Not used
+* This is the code used for Scan Fragment (which uses our previous mobile reader: Arete Pop
+ */
+
 package org.stjude.www.dsassetmanagement.dsassetmanagement;
 
 import java.util.ArrayList;

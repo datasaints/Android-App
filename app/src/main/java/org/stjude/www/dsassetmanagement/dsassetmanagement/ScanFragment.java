@@ -1,3 +1,10 @@
+/*
+* Not used.
+* This is the code for our previous mobile reader: Arete Pop
+*
+ */
+
+
 package org.stjude.www.dsassetmanagement.dsassetmanagement;
 
 import android.content.BroadcastReceiver;
@@ -19,6 +26,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import android.os.Vibrator;
 
 import com.jwidjaja.aretetest.R;
 import com.phychips.rcp.*;
@@ -49,6 +57,8 @@ public class ScanFragment extends Fragment implements iRcpEvent {
     public static int max_time = 0;
     public static int repeat_cycle = 0;
 
+    private Vibrator vib;
+    private int power = 20;
     private String test_msg;
     private int battery;
     private ToggleButton open;
@@ -115,6 +125,8 @@ public class ScanFragment extends Fragment implements iRcpEvent {
                 }
             }
         }, PhoneStateListener.LISTEN_CALL_STATE);
+
+        vib = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -143,6 +155,9 @@ public class ScanFragment extends Fragment implements iRcpEvent {
                         try {
                             RcpApi.open();
                             setVolumeMax();
+                            power = 250;
+                            RcpApi.setOutputPowerLevel((byte) 255);
+                            RcpApi.getOutputPowerLevel();
                             button.setText("Stop Reading");
 
                         }
@@ -400,7 +415,6 @@ public class ScanFragment extends Fragment implements iRcpEvent {
                             tagAdapter.notifyDataSetChanged();
                         }
                     });
-
                 }
             }
         }
@@ -445,6 +459,7 @@ public class ScanFragment extends Fragment implements iRcpEvent {
 
     public void onTagWithRssiReceived(int[] data, int rssi) {
         ListRefreshWithRssi(data, rssi);
+        vib.vibrate(100);
     }
 
     public void onReaderInfoReceived(int[] var1) {
