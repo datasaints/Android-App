@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
-        //need to do some stuff for WebView fragment here
     }
 
     /**
@@ -64,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     return WebFragment.newInstance("Web Fragment");
                 case 1:
-                    return ProfileFragment.newInstance("Profile Fragment");
+                    return ScanFragment.newInstance("Scan Fragment");
                 default:
-                    return ProfileFragment.newInstance("Scan Fragment");
+                    return ScanFragment.newInstance("Scan Fragment");
             }
 
             //return PlaceholderFragment.newInstance(position + 1);

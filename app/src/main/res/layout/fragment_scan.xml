@@ -4,93 +4,33 @@
     android:layout_height="match_parent"
     tools:context="org.stjude.www.dsassetmanagement.dsassetmanagement.ScanFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="426dp"
-        android:id="@+id/listView"
+    <ImageView
+        android:layout_width="282dp"
+        android:layout_height="282dp"
+        android:id="@+id/tsl1128"
         android:layout_gravity="center_horizontal|top"
-        android:layout_below="@+id/linearLayout"
-        android:layout_weight="0.5"
-        android:divider="@drawable/divider_png"
-        android:drawSelectorOnTop="false"
-        android:textColor="#FF0000"
-        />
+        android:src="@drawable/tsl1128pic"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Scanning"
-        android:id="@+id/scan_button"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/tag_search_button"
+        android:text="Search Tags"
+        android:layout_marginTop="79dp"
+        android:layout_below="@+id/datasol"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clear"
-        android:id="@+id/clear_button"
-        android:layout_gravity="right|bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout">
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="#E5E5E5"
-            android:gravity="center"
-            android:text="0 tags"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/aboutvalue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="0.8"
-            android:background="#E5E5E5"
-            android:gravity="center"
-            android:text="Unplugged"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="#E5E5E5"
-            android:gravity="center"
-            android:text="0%"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        android:id="@+id/datasol"
+        android:src="@drawable/datasol"
+        android:scaleType="fitXY"
+        android:layout_below="@+id/tsl1128"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
